@@ -10,7 +10,10 @@ terraform {
 provider "docker" {}
 
 resource "docker_image" "build" {
-  name         = "build:latest"
+  name = "build:latest"
+  build {
+    path = "../"
+  }
   keep_locally = false
 }
 
